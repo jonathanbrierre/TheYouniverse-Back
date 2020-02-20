@@ -13,7 +13,12 @@ User.destroy_all
 Topic.destroy_all
 
 
-t1 = Topic.create(name: 'tamales')
+t1 = Topic.create(name: 'Spirituality', slug: 'spirituality')
+t2 = Topic.create(name: 'Love and Relationships', slug: 'love')
+t3 = Topic.create(name: 'Discipline', slug: 'discipline')
+t4 = Topic.create(name: 'Philosophy', slug: 'philosophy')
+t5 = Topic.create(name: 'Positivity', slug:'positivity')
+
 
 u1 = User.create(username: 'motorolla', password: 'choochoo')
 
