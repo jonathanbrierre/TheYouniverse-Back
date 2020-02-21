@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   # get '/posts/positivity/:page', to: 'posts#positivity'
 
   get '/posts/:slug/:page', to: 'posts#infinite_scroll'
-  
+  get '/get_comments/:post_id', to: 'comments#post_comments'
+
+
   resources :users
   resources :likes
   resources :comments

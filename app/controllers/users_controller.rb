@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
     before_action :authorized, only: [:persist, :show, :index]
 
-    def index 
-        @users = User.all 
-        render json: @users
-    end
+    # def index 
+    #     @users = User.all 
+    #     render json: @users
+    # end
 
-    def show 
-        @user = User.find_by(id: params[:id])
-        render json: {user: UserSerializer.new(@user)}
-    end
+    # def show 
+    #     @user = User.find_by(id: params[:id])
+    #     render json: {user: UserSerializer.new(@user)}
+    # end
 
     def create 
         @user = User.create(params.permit(:username, :password))
