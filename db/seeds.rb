@@ -20,8 +20,8 @@ t4 = Topic.create(name: 'Philosophy', slug: 'philosophy')
 t5 = Topic.create(name: 'Positivity', slug:'positivity')
 
 
-u1 = User.create(username: 'motorolla', password: 'choochoo')
-
+u1 = User.create(username: 'motorolla', password: 'choochoo', first_name: 'moto', last_name:'rolla', email: 'moto@rolla.com', bio: 'ring ring, im a telephone', avatar: 'https://www.buytwowayradios.com/media/catalog/product/cache/2/thumbnail/800x/9df78eab33525d08d6e5fb8d27136e95/t/8/t800_blue_front_0418_4834_2up_rhv1.jpg')
+u2 = User.create(username: 'jonathanbrierre', first_name: 'jonathan', last_name: 'brierre', password: '123', gender: 'male', email: 'jay@yahoo.com', avatar: 'https://images-na.ssl-images-amazon.com/images/I/41FBm7PCIfL._US230_.jpg', bio: 'i like women with big minds')
 p1 = Post.create(topic: t1, user: u1, content: 'hohoho merry christmas')
 p2 = Post.create(topic: t1, user: u1, content: 'this is post 2')
 p3 = Post.create(topic: t1, user: u1, content: 'i like women with big minds')
