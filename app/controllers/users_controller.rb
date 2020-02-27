@@ -28,6 +28,16 @@ class UsersController < ApplicationController
         render json: {message: 'successful deletion'}
     end
 
+    def profile 
+        # byebug
+        @user = User.find_by(id: params[:id])
+        if @user
+            render json: @user
+        else
+            render json:  {message: 'Could not find user'}
+        end
+    end
+
     def login
         # byebug
         @user = User.find_by(username: params[:username])

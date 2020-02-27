@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/posts/:slug/:page', to: 'posts#infinite_scroll'
   get '/get_comments/:post_id', to: 'comments#post_comments'
-
+  get '/profile/:id', to: 'users#profile'
 
   resources :users
   resources :likes
