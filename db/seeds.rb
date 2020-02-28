@@ -12,6 +12,8 @@ Post.destroy_all
 User.destroy_all
 Topic.destroy_all
 Following.destroy_all
+Conversation.destroy_all
+Message.destroy_all
 
 
 t1 = Topic.create(name: 'Spirituality', slug: 'spirituality')
@@ -44,3 +46,16 @@ f1 = Following.create( user_id: u2.id, followee_id: u1.id)
 f2 = Following.create( user_id: u2.id, followee_id: u3.id)
 f3 = Following.create( user_id: u2.id, followee_id: u4.id)
 f4 = Following.create( user_id: u1.id, followee_id: u2.id)
+
+con1 = Conversation.create(user_id: u2.id, conversee_id: u1.id)
+con2 = Conversation.create(user_id: u2.id, conversee_id: u3.id)
+con3 = Conversation.create(user_id: u4.id, conversee_id: u2.id)
+
+
+m1 = Message.create(user: u2, conversation: con1, content: 'hello')
+m2 = Message.create(user: u2, conversation: con1, content: 'how are you')
+m3 = Message.create(user: u1, conversation: con1, content: 'hello')
+
+m4 = Message.create(user: u3, conversation: con2, content: 'potate')
+m5 = Message.create(user: u3, conversation: con2, content: 'hahaho')
+m6 = Message.create(user: u2, conversation: con2, content: 'lalaaa')
