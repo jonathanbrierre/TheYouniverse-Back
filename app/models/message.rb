@@ -1,6 +1,6 @@
 class Message < ApplicationRecord
   belongs_to :user
-  belongs_to :conversation
+  belongs_to :conversation, touch: true
 
   def message_for_broadcast
     {

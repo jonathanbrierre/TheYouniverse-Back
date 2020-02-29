@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'users#profile'
   get '/conversations/:userId', to: 'conversations#user_convos'
   get '/messages/:convoId', to: 'conversations#messages'
+  get '/messages/:convoId/:userId', to: 'conversations#other_user'
+
   
   resources :users
   resources :likes
