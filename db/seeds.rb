@@ -16,11 +16,10 @@ Conversation.destroy_all
 Message.destroy_all
 
 
-t1 = Topic.create(name: 'Spirituality', slug: 'spirituality')
-t2 = Topic.create(name: 'Love and Relationships', slug: 'love')
-t3 = Topic.create(name: 'Discipline', slug: 'discipline')
-t4 = Topic.create(name: 'Philosophy', slug: 'philosophy')
-t5 = Topic.create(name: 'Positivity', slug:'positivity')
+t1 = Topic.create(name: 'Spirituality', slug: 'spirituality', img: ' https://cdn.pixabay.com/photo/2017/01/23/09/20/wave-2001831_960_720.jpg')
+t2 = Topic.create(name: 'Love', slug: 'love', img: 'https://whoabella.com/wp-content/uploads/2019/05/love.jpg')
+t3 = Topic.create(name: 'Philosophy', slug: 'philosophy', img: 'http://arts.u-szeged.hu/site/upload/2018/08/raphael_school_of_athens2.jpg')
+t4 = Topic.create(name: 'Positivity', slug:'positivity', img: 'https://ak4.picdn.net/shutterstock/videos/9357944/thumb/1.jpg')
 
 
 u1 = User.create(username: 'motorolla', password: 'choochoo', first_name: 'moto', last_name:'rolla', email: 'moto@rolla.com', bio: 'ring ring, im a telephone', avatar: 'https://www.buytwowayradios.com/media/catalog/product/cache/2/thumbnail/800x/9df78eab33525d08d6e5fb8d27136e95/t/8/t800_blue_front_0418_4834_2up_rhv1.jpg')
