@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
     # byebug
     @message = Message.create(conversation_id: params[:convoId], user: @user, content: params[:content])
     convo = Conversation.find_by(id: params[:convoId])
-
+    convo.update(updated: true)
+    
     if @message.valid?
       # byebug
       MessengerChannel.broadcast_to(convo, @message.message_for_broadcast)
