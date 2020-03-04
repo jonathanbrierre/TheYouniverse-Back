@@ -1,22 +1,16 @@
 class ConversationsController < ApplicationController
 
   def create 
-    # byebug
-
-    # @convo = Conversation.find_or_create_by({user_id: params[:userId], conversee_id: params[:converseeId]} || {user_id: params[:converseeId], conversee_id: params[:userId]} )
     @convo = Conversation.find_by({user_id: params[:userId], conversee_id: params[:converseeId]})
     @convo2 = Conversation.find_by({user_id: params[:converseeId], conversee_id: params[:userId]})
     if @convo
       render json: @convo 
     elsif @convo2
-      # byebug
       render json: @convo2 
-
     else
       @new_convo = Conversation.create(user_id: params[:userId], conversee_id: params[:converseeId])
       render json: @new_convo 
     end
-
   end
 
   def checked 
