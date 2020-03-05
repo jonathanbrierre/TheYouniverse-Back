@@ -2,8 +2,6 @@ class MessengerChannel < ApplicationCable::Channel
 
   
   def subscribed
-    # stream_from "some_channel"
-    # byebug
     convo = Conversation.find_by(id: params[:convoId])
     stream_for convo
   end

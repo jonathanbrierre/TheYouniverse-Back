@@ -14,7 +14,13 @@ class UsersController < ApplicationController
 
     def create 
         # byebug
-        @user = User.create(user_params)
+        if params[:avatar] == ''
+            avatar = 'https://i5.walmartimages.com/asr/39f4edb4-f7a9-4caf-b562-b20f8d135999_1.a5f5873d9043274b8d3a87f8108339be.jpeg?odnWidth=450&odnHeight=450&odnBg=ffffff'
+        else
+            avatar = params[:avatar]
+        end
+        @user = User.create(username: params[:username], password: params[:password], email: params[:email], first_name: params[:first_name], last_name: params[:last_name], bio: params[:bio], avatar: avatar)
+        
         if @user.valid?
             token = encode_token({user_id: @user.id})
             render json:{ user: UserSerializer.new(@user), jwt: token }, status: :accepted

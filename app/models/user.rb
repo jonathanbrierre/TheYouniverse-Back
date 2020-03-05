@@ -20,9 +20,9 @@ class User < ApplicationRecord
 
     validates :username, uniqueness: true, presence: true
     # validates :username, presence: true
-    validates :email, uniqueness: true, presence: true
+    # validates :email, uniqueness: true, presence: true
     # validates :email
     validates :first_name, presence: true
-    validates :last_name, presence: true
-    validates :bio, presence: true
+    # validates :last_name, presence: true
+    # validates :bio, presence: true
 end
