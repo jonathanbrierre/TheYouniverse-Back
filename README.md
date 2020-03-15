@@ -1,24 +1,12 @@
-# README
+### Setting Up Backend
+## Note - Uses a postgresql database
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Fork and clone this repo onto your computer
+2. In your terminal, go to the directory where this repo is located
+3. From within the directory, run the command `bundle install`
+4. Create database by running the command `rails db:create`
+5. Mirate the database migration files by running the command `rails db:migrate`
+6. Seed the database with the command `rails db:seed`
+7. Start server with the command `rails s` (Make sure the server is running on localhost:3000)
+8. Fire up the front end.
+9. Enjoy!
