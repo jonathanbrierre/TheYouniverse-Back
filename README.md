@@ -10,3 +10,7 @@
 7. Start server with the command `rails s` (Make sure the server is running on localhost:3000)
 8. Fire up the front end.
 9. Enjoy!
+
+
+### Link to the front-end 
+https://github.com/jonathanbrierre/TheYouniverse-Front
