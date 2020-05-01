@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authorized, only: [:persist, :show, :index, :update, :destroy]
+    before_action :authorized, only: [:persist, :update, :destroy]
 
 
     def update 
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     end
 
     def profile 
-        # byebug
+        # dynamic based on who's profile is being viewed
         @user = User.find_by(id: params[:id])
         if @user
             render json: @user

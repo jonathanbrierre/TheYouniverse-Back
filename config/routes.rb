@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :entries
   get '/persist', to: 'users#persist'
   post '/login', to: 'users#login'
   

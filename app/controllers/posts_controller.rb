@@ -25,14 +25,15 @@ class PostsController < ApplicationController
 
     def infinite_scroll
         topic = Topic.all.find_by(slug: params[:slug])
-        @posts = posts_by_topic(topic).slice((8*params[:page].to_i) -8, 8 )
+        @posts = posts_by_topic(topic).slice((8*params[:page].to_i) -8, 8)
+
         render json: @posts
     end
 
     private 
 
     def posts_by_topic(topic)
-        @posts = Post.order.where(topic_id: topic.id).reverse
+        @posts = Post.consistent_order.where(topic_id: topic.id).reverse
     end
 
 

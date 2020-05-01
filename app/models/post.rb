@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  def self.order 
+  def self.consistent_order 
       Post.all.order(:created_at)
   end
 end
