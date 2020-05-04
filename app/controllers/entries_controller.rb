@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
 
     def create 
         # byebug
-        @entry = Entry.create(text: params[:entry], user: @user)
+        @entry = Entry.create(text: entry_params[:text], user: @user)
         if @entry.valid?
             render json: {entry: @entry, message: 'Successfully creeated an entry!'}
         else
@@ -12,24 +12,26 @@ class EntriesController < ApplicationController
     end
 
     def update 
-        byebug
+        # byebug
+        @entry = Entry.find_by(id: entry_params[:id])
+        @entry.update(text: entry_params[:text])
+        render json: {entry: @entry, message: 'Successful Update'}
     end 
 
     def destroy 
-        @entry = Entry.find_by(id: params[:id])
+        @entry = Entry.find_by(id: entry_params[:id])
         @entry.destroy
         render json: {message: 'Successfully Deleted'}
     end
 
     def user_entries 
         @user_entries = @user.entries.reverse
-
         render json: {entries: @user_entries}
     end
 
     private
 
     def entry_params
-        params.permit
+        params.permit(:id, :text)
     end
 end
