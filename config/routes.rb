@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/messages/:convoId/:userId', to: 'conversations#other_user'
   get '/checked/:id', to: 'conversations#checked'
   
+  get '/user_entries', to: 'entries#user_entries'
+  
   resources :users
   resources :likes
   resources :comments

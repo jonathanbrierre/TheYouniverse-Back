@@ -18,6 +18,8 @@ class User < ApplicationRecord
     has_many :posts, dependent: :destroy
     has_many :topics, through: :posts
 
+    has_many :entries
+
     validates :username, uniqueness: true, presence: true
     # validates :username, presence: true
     # validates :email, uniqueness: true, presence: true
