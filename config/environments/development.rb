@@ -42,7 +42,7 @@ Rails.application.config.action_cable.allowed_request_origins = ['http://localho
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-  config.action_cable.allowed_request_origins = [%r{https?://\S+}]
+  config.action_cable.allowed_request_origins = [%r{http://*}, %r{https://*}, %r{ws://*}, %r{wss://*}]
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
